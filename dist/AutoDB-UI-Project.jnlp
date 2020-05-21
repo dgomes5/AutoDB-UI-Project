@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="AutoDB-UI-Project.jnlp">
+  <information>
+    <title>AutoDB-UI-Project</title>
+    <vendor>Danny</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="AutoDB-UI-Project.jar" size="19569" download="eager" />
+    <jar href="lib\sqlite-jdbc-3.27.2.1.jar" size="6012107" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="com.danny.main.MainApp"  name="AutoDB-UI-Project" />
+  <update check="always"/>
+</jnlp>

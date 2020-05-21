@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="942.0" maxWidth="1050.0" minHeight="942.0" minWidth="100.0" prefHeight="942.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.danny.controller.AccidentsController">
+   <children>
+      <Text layoutX="226.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Automobile Insurance Database GUI" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new accident to the database">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="111.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dpInsertDate" editable="false" layoutX="87.0" layoutY="158.0" prefHeight="25.0" prefWidth="113.0" promptText="Select Date" />
+      <Text layoutX="236.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCity" layoutX="214.0" layoutY="159.0" prefHeight="25.0" prefWidth="113.0" promptText="City" />
+      <Text layoutX="339.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtState" layoutX="341.0" layoutY="159.0" prefHeight="25.0" prefWidth="37.0" promptText="MA" />
+      <Text layoutX="33.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIN">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cbVin" layoutX="29.0" layoutY="230.0" prefHeight="25.0" prefWidth="123.0" />
+      <Text layoutX="170.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Damages">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtDamages" layoutX="170.0" layoutY="231.0" prefHeight="25.0" prefWidth="99.0" promptText="Damages" />
+      <Text layoutX="297.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver SSN">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cbDriver" layoutX="288.0" layoutY="231.0" prefHeight="25.0" prefWidth="123.0" />
+      <Button layoutX="427.0" layoutY="231.0" mnemonicParsing="false" onAction="#addNewAutoDriver" text="Add " />
+      <TableView fx:id="tblNewAutoDriver" layoutX="33.0" layoutY="288.0" prefHeight="120.0" prefWidth="318.0">
+        <columns>
+          <TableColumn fx:id="colAccNewVin" prefWidth="109.0" text="VIN" />
+            <TableColumn fx:id="colAccNewDamages" prefWidth="90.0" text="Damages" />
+            <TableColumn fx:id="colAccNewDriver" prefWidth="118.0" text="Driver SSN" />
+        </columns>
+      </TableView>
+      <Button layoutX="367.0" layoutY="336.0" mnemonicParsing="false" onAction="#insertAccident" text="Add Accident" />
+      <Text layoutX="551.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find the details about a given accident:" wrappingWidth="437.18359375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="617.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accident ID" wrappingWidth="92.15332090854645">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAID" layoutX="589.0" layoutY="159.0" promptText="Accident ID" />
+      <Button layoutX="745.0" layoutY="159.0" mnemonicParsing="false" onAction="#searchAccident" text="Search" />
+      <Button layoutX="806.0" layoutY="159.0" mnemonicParsing="false" onAction="#searchAllAccidents" text="Reset" />
+      <TableView fx:id="tblAccidentsDetails" layoutX="513.0" layoutY="203.0" prefHeight="336.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="colAccId" editable="false" maxWidth="36.0" minWidth="25.0" prefWidth="36.0" text="ID" />
+          <TableColumn fx:id="colAccDate" editable="false" maxWidth="83.0" minWidth="70.0" prefWidth="72.0" resizable="false" text="Date" />
+            <TableColumn fx:id="colAccCity" editable="false" prefWidth="97.0" text="City" />
+            <TableColumn fx:id="colAccState" editable="false" prefWidth="38.0" text="State" />
+            <TableColumn fx:id="colAccVin" editable="false" prefWidth="99.0" text="VIN" />
+            <TableColumn fx:id="colAccDamages" editable="false" prefWidth="58.0" text="Damages" />
+            <TableColumn fx:id="colAccDriver" editable="false" prefWidth="113.0" text="Driver SSN" />
+        </columns>
+      </TableView>
+      <Text layoutX="119.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search for accidents meeting the below criteria:" textAlignment="CENTER" wrappingWidth="326.18359375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="130.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From Date: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dpFromDate" editable="false" layoutX="127.0" layoutY="678.0" prefHeight="25.0" prefWidth="113.0" promptText="Select Date" />
+      <Text layoutX="249.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Date:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dpToDate" editable="false" layoutX="246.0" layoutY="678.0" prefHeight="25.0" prefWidth="113.0" promptText="Select Date" />
+      <Button layoutX="376.0" layoutY="678.0" mnemonicParsing="false" onAction="#searchAccidentByRangeOfDates" text="Search" />
+      <Button layoutX="441.0" layoutY="678.0" mnemonicParsing="false" onAction="#searchAllAccidentsCriteria" text="Reset" />
+      <Text layoutX="124.0" layoutY="742.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Avg. Damages">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtMinAvgDamages" layoutX="124.0" layoutY="749.0" promptText="Min. Avg. Damages" />
+      <Text layoutX="288.0" layoutY="743.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Avg. Damages">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtMaxAvgDamages" layoutX="288.0" layoutY="749.0" promptText="Max. Avg. Damages" />
+      <Button layoutX="450.0" layoutY="749.0" mnemonicParsing="false" onAction="#searchAccidentByRangeOfAvgDamages" text="Search" />
+      <Text layoutX="121.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Total Damages">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtMinTotalDamages" layoutX="124.0" layoutY="820.0" promptText="Min. Total Damages" />
+      <Text layoutX="292.0" layoutY="815.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Total Damages">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtMaxTotalDamages" layoutX="289.0" layoutY="820.0" promptText="Max. Total Damages" />
+      <Button layoutX="450.0" layoutY="820.0" mnemonicParsing="false" onAction="#searchAccidentByRangeOfTotalDamages" text="Search" />
+      <TableView fx:id="tblAccidentsCriteria" layoutX="572.0" layoutY="567.0" prefHeight="336.0" prefWidth="333.0">
+         <columns>
+            <TableColumn fx:id="colAccCriteriaId" editable="false" maxWidth="36.0" minWidth="25.0" prefWidth="36.0" text="ID" />
+            <TableColumn fx:id="colAccCriteriaDate" editable="false" maxWidth="83.0" minWidth="70.0" prefWidth="72.0" resizable="false" text="Date" />
+            <TableColumn fx:id="colAccCriteriaCity" editable="false" prefWidth="97.0" text="City" />
+            <TableColumn fx:id="colAccCriteriaState" editable="false" prefWidth="38.0" text="State" />
+            <TableColumn fx:id="colAccCriteriaDamages" prefWidth="89.0" text="Total Damages" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
